@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get 'welcome/index'
+  # get 'welcome/index'
 
-  get 'welcome/about'
-  # get 'about' => 'welcome#about'
+  # get 'welcome/about'
+  get 'about' => 'welcome#about'
 
   root 'welcome#index'
 end

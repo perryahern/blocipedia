@@ -1,2 +1,32 @@
-<h1>Wikis#new</h1>
-<p>Find me in app/views/wikis/new.html.erb</p>
+<h1>New Wiki</h1>
+
+<div class="row">
+  <div class="col-md-4">
+    <p>The Way of the Wiki</p>
+    <ul>
+      <li>Keep it factual.</li>
+      <li>Do not make false edits.</li>
+      <li>Politics and personal opinions are not welcome.</li>
+    </ul>
+  </div>
+  <div class="col-md-8">
+    <%= form_for @wiki do |w| %>
+      <div class="form-group">
+        <%= w.label :title %>
+        <%= w.text_field :title, class: 'form-control', placeholder: "Enter wiki title" %>
+      </div>
+      <div class="form-group">
+        <%= w.label :body %>
+        <%= w.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter wiki body" %>
+      </div>
+      <div class="form-group">
+        <%= w.label :private, class: 'checkbox' do %>
+          <%= w.check_box :private %> Private wiki?
+        <% end %>
+      </div>
+      <div class="form-group">
+        <%= w.submit "Save", class: 'btn btn-success' %>
+      </div>
+    <% end %>
+  </div>
+</div>
